@@ -37,6 +37,10 @@ h4 {
   text-align: center;
 }
 
+.green {
+  color: rgb(51, 130, 81);
+}
+
 /* Navagation Menu */
 
 header {
@@ -48,6 +52,10 @@ header {
   height: 5rem;
   width: 100%;
   top: 0;
+}
+
+header .mobile {
+  display: none;
 }
 
 #logo {
@@ -63,14 +71,13 @@ header {
 
 nav ul {
   display: flex;
-  list-style-type: none;
   margin: 0rem 1rem;
   float: right;
   position: relative;
 }
 
-nav li:last-child {
-  margin-right: 1rem;
+#menu ul {
+  list-style-type: none;
 }
 
 nav a {
@@ -82,46 +89,7 @@ nav a {
 nav ul li {
   margin: 0px;
   display: inline-block;
-}
-
-nav ul li ul li:hover {
-  background: #000000;
-}
-
-nav a:hover {
-  background-color: #000000;
-}
-
-.toggle,
-[id^="drop"] {
-  display: none;
-}
-
-nav:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-nav ul ul {
-  display: none;
-  position: absolute;
-  top: 60px;
-}
-
-nav ul li:hover > ul {
-  display: inherit;
-}
-
-li > a:after {
-  content: "=";
-}
-li > a:only-child:after {
-  content: "";
-}
-
-.toggle {
-  font-family: "Metamorphous", serif;
+  padding-right: 1rem;
 }
 
 /* Welcome Banner */
@@ -160,10 +128,10 @@ li > a:only-child:after {
 /* Registration Styles */
 
 .registration {
-  width: 100%;
+  padding: 1.5rem 15%;
 }
 
-li {
+.padded li {
   list-style: none;
 }
 
@@ -182,7 +150,7 @@ li {
 }
 
 .padded-boxes .heading {
-  background: black;
+  background: rgb(51, 130, 81);
   color: white;
   margin: 0;
   padding: 1rem;
@@ -195,10 +163,6 @@ li {
   justify-content: center;
 }
 
-.notes {
-  padding: 1.5rem 10%;
-}
-
 section a:active,
 section a:any-link {
   font-family: "Metamorphous", serif;
@@ -207,8 +171,99 @@ section a:any-link {
   text-decoration: none;
 }
 
+.notes {
+  padding-top: 1rem;
+}
+
+/* Site Info Styles*/
+#event_details {
+  padding: 1.5rem 15%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.grid-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+.grid-item img {
+  width: 100%;
+}
+
+.image-text {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/*FAQS Style */
+
+#faqs {
+  padding: 1.5rem 15%;
+}
+
+/* Contact Style */
+
+form {
+  max-width: 420px;
+  margin: 50px auto;
+}
+
+.feedback-input {
+  color: white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border: 2px solid rgb(51, 130, 81);
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+.feedback-input:focus {
+  border: 2px solid rgb(51, 130, 81);
+}
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize: vertical;
+}
+
+[type="submit"] {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  width: 100%;
+  background: rgb(51, 130, 81);
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: all 0.3s;
+  margin-top: -4px;
+  font-weight: 700;
+}
+[type="submit"]:hover {
+  background: rgb(51, 130, 81);
+}
+
 /* Responsive styles */
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   h1 {
     margin: 0;
     font-size: 1.5rem;
@@ -256,72 +311,19 @@ section a:any-link {
     float: none;
   }
 
-  nav {
-    margin: 0;
+  header .desktop {
+    display: none;
   }
 
-  .toggle + a,
-  .menu {
-    display: block;
+  .logo {
+    display: none;
   }
 
-  .toggle {
-    display: block;
-    padding: 14px 20px;
-    color: #fff;
-    font-size: 17px;
-    text-decoration: none;
-    border: none;
+  .menu2 {
+    font-size: 0.5rem;
   }
 
-  .toggle:hover {
-    background-color: #000000;
-  }
-
-  [id^="drop"]:checked + ul {
-    display: block;
-  }
-
-  nav ul li {
-    display: block;
-    width: 100%;
-  }
-
-  nav ul ul .toggle,
-  nav ul ul a {
-    padding: 0 40px;
-  }
-
-  nav ul ul ul a {
-    padding: 0 80px;
-  }
-
-  nav a:hover,
-  nav ul ul ul a {
-    background-color: #000000;
-  }
-
-  nav ul li ul li .toggle,
-  nav ul ul a,
-  nav ul ul ul a {
-    padding: 14px 20px;
-    color: #fff;
-    font-size: 17px;
-  }
-
-  nav ul li ul li .toggle,
-  nav ul ul a {
-    background-color: #212121;
-  }
-
-  nav ul ul {
-    float: none;
-    position: static;
-    color: #ffffff;
-  }
-
-  nav ul ul li:hover > ul,
-  nav ul li:hover > ul {
+  h1 {
     display: none;
   }
 }
