@@ -1,0 +1,342 @@
+body {
+  font-family: "Cardo", serif;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  word-wrap: break-word !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Metamorphous", cursive;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: white;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 2rem;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Navagation Menu */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  position: fixed;
+  height: 5rem;
+  width: 100%;
+  top: 0;
+}
+
+#logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+#logo img {
+  max-width: 15%;
+  height: auto;
+  padding-left: 1rem;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0rem 1rem;
+  float: right;
+  position: relative;
+}
+
+nav li:last-child {
+  margin-right: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-family: "Metamorphous", serif;
+}
+
+nav ul li {
+  margin: 0px;
+  display: inline-block;
+}
+
+nav ul li ul li:hover {
+  background: #000000;
+}
+
+nav a:hover {
+  background-color: #000000;
+}
+
+.toggle,
+[id^="drop"] {
+  display: none;
+}
+
+nav:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 60px;
+}
+
+nav ul li:hover > ul {
+  display: inherit;
+}
+
+li > a:after {
+  content: "=";
+}
+li > a:only-child:after {
+  content: "";
+}
+
+.toggle {
+  font-family: "Metamorphous", serif;
+}
+
+/* Welcome Banner */
+
+.banner {
+  text-align: center;
+  margin-top: 20px;
+  background: url("./Images/Background Transparent.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 25rem;
+  display: flex;
+  background-color: black;
+}
+
+.intro {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 20px;
+  align-items: center;
+  font-family: "Cardo";
+  font-size: 3rem;
+  font-style: italic;
+  color: white;
+}
+
+/* About Us Styles */
+#about_us {
+  background-color: black;
+  color: white;
+  padding: 1.5rem 15%;
+}
+
+/* Registration Styles */
+
+.registration {
+  width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+.padded-boxes {
+  display: flex;
+  gap: 2rem;
+  padding: 0 2rem;
+  justify-content: center;
+  /* align-content: shrink */
+}
+
+.padded-boxes > * {
+  background: #eee;
+  border-radius: 0.4rem;
+  width: 22rem;
+}
+
+.padded-boxes .heading {
+  background: black;
+  color: white;
+  margin: 0;
+  padding: 1rem;
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
+}
+
+.padded-boxes .padded {
+  align-items: center;
+  justify-content: center;
+}
+
+.notes {
+  padding: 1.5rem 10%;
+}
+
+section a:active,
+section a:any-link {
+  font-family: "Metamorphous", serif;
+  font-size: 2rem;
+  color: rgb(51, 130, 81);
+  text-decoration: none;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .padded-boxes {
+    flex-direction: column;
+  }
+
+  .padded-boxes .padded {
+    padding: 0.1rem;
+  }
+
+  section a:active,
+  section a:any-link {
+    font-size: 1rem;
+  }
+
+  .banner {
+    text-align: center;
+    margin-top: 20px;
+    background: url("./Images/Background Transparent.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 25rem;
+    display: flex;
+    background-color: black;
+  }
+
+  .intro {
+    font-size: 1.5rem;
+  }
+
+  #logo {
+    display: block;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    float: none;
+  }
+
+  nav {
+    margin: 0;
+  }
+
+  .toggle + a,
+  .menu {
+    display: block;
+  }
+
+  .toggle {
+    display: block;
+    padding: 14px 20px;
+    color: #fff;
+    font-size: 17px;
+    text-decoration: none;
+    border: none;
+  }
+
+  .toggle:hover {
+    background-color: #000000;
+  }
+
+  [id^="drop"]:checked + ul {
+    display: block;
+  }
+
+  nav ul li {
+    display: block;
+    width: 100%;
+  }
+
+  nav ul ul .toggle,
+  nav ul ul a {
+    padding: 0 40px;
+  }
+
+  nav ul ul ul a {
+    padding: 0 80px;
+  }
+
+  nav a:hover,
+  nav ul ul ul a {
+    background-color: #000000;
+  }
+
+  nav ul li ul li .toggle,
+  nav ul ul a,
+  nav ul ul ul a {
+    padding: 14px 20px;
+    color: #fff;
+    font-size: 17px;
+  }
+
+  nav ul li ul li .toggle,
+  nav ul ul a {
+    background-color: #212121;
+  }
+
+  nav ul ul {
+    float: none;
+    position: static;
+    color: #ffffff;
+  }
+
+  nav ul ul li:hover > ul,
+  nav ul li:hover > ul {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: white;
+  }
+}
+
+@media all and (max-width: 330px) {
+  nav ul li {
+    display: block;
+    width: 94%;
+  }
+}
